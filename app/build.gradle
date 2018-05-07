@@ -22,8 +22,8 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:multidex:1.0.1'
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    compile project(':love')
+    implementation 'com.android.support:multidex:1.0.1'
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:25.1.0'
+    api project(':love')
 }
