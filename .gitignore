@@ -14,6 +14,7 @@ local.properties
 *.a
 *.orig
 *.rej
+.DS_Store
 
 
 # Downloaded gradle wrapper

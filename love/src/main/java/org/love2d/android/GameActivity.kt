@@ -45,7 +45,7 @@ class GameActivity : Activity() {
         super.onCreate(savedInstanceState)
         val context = this.applicationContext
         val tv = TextView(context)
-        tv.text = "This is the story of a girl"
+        tv.text = stringFromJNI()
         tv.setTextColor(Color.WHITE)
         tv.setTextSize(2, 25f)
         val lp = RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT)
@@ -55,6 +55,20 @@ class GameActivity : Activity() {
         lp.leftMargin = 20
         tv.layoutParams = lp
         setContentView(tv)
+    }
+
+    /**
+     * A native method that is implemented by the 'native-lib' native library,
+     * which is packaged with this application.
+     */
+    external fun stringFromJNI(): String
+
+    companion object {
+
+        // Used to load the 'native-lib' library on application startup.
+        init {
+            System.loadLibrary("native-lib")
+        }
     }
 }
 
