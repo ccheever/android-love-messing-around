@@ -310,3 +310,16 @@ int main(int argc, char **argv)
 }
 
 #endif // LOVE_BUILD_EXE
+
+#include <jni.h>
+#include <string>
+extern "C" JNIEXPORT jstring
+
+JNICALL
+//Java_com_ccheever_androidtestthree_MainActivity_stringFromJNI(
+Java_org_love2d_android_GameActivity_stringFromJNI(
+		JNIEnv *env,
+		jobject /* this */) {
+	std::string hello = "Hello from love.cpp C++";
+	return env->NewStringUTF(hello.c_str());
+}

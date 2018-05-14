@@ -44,6 +44,7 @@ import android.content.pm.PackageManager;
 public class GameActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //System.loadLibrary("liblove");
         super.onCreate(savedInstanceState);
         Context context = this.getApplicationContext();
         TextView tv = new TextView(context);
@@ -58,6 +59,7 @@ public class GameActivity extends Activity {
         tv.setLayoutParams(lp);
         setContentView(tv);
     }
+
 }
 
 class GameActivity2 extends SDLActivity {
