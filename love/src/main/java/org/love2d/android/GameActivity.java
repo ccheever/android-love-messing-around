@@ -44,11 +44,11 @@ import android.content.pm.PackageManager;
 public class GameActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //System.loadLibrary("liblove");
+        System.loadLibrary("love");
         super.onCreate(savedInstanceState);
         Context context = this.getApplicationContext();
         TextView tv = new TextView(context);
-        tv.setText("This is the story of a girl");
+        tv.setText(stringFromJNI() + " This is the story of a girl");
         tv.setTextColor(Color.WHITE);
         tv.setTextSize(2, 25);
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
@@ -60,6 +60,7 @@ public class GameActivity extends Activity {
         setContentView(tv);
     }
 
+    private native String stringFromJNI();
 }
 
 class GameActivity2 extends SDLActivity {
